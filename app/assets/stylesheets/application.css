@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+th{
+    color: #730E15;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #4C8BF5;
+    color: #fff;
+}

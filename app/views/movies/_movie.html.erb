@@ -1,22 +1,34 @@
-<div id="<%= dom_id movie %>">
-  <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
-  </p>
 
-  <p>
-    <strong>Rating:</strong>
-    <%= movie.rating %>
-  </p>
+  <% if @show_row  %>
+    <tr id="<%= dom_id movie %>" >
+      <td style="font-weight:normal"><%= movie.title %>,</td>
+      <td style="font-weight:normal"><%= movie.rating %>,</td>
+      <td style="font-weight:normal"><%= movie.description %>,</td>
+      <td style="font-weight:normal"><%= movie.release_date %>,</td>
+      <td style="font-weight:normal"><%= link_to "Show this movie", movie %>,</td>
+      <td style="font-weight:normal"><%= link_to "Edit this movie", edit_movie_path(movie) %>,</td>
+    </tr>
+  <% else %>
+    <div id="<%= dom_id movie %>">
+      <p>
+        <strong>Title:</strong>
+        <%= movie.title %>
+      </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= movie.description %>
-  </p>
+      <p>
+        <strong>Rating:</strong>
+        <%= movie.rating %>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= movie.description %>
+      </p>
 
-  <p>
-    <strong>Release date:</strong>
-    <%= movie.release_date %>
-  </p>
+      <p>
+        <strong>Release date:</strong>
+        <%= movie.release_date %>
+      </p>
 
-</div>
+    </div>
+  <% end %>
+
